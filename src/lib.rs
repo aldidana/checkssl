@@ -48,6 +48,24 @@ pub struct Cert {
 pub struct CheckSSL();
 
 impl CheckSSL {
+    /// Check ssl from domain with port 443
+    ///
+    /// Example
+    ///
+    /// ```no_run
+    /// use checkssl::CheckSSL;
+    ///
+    /// match CheckSSL::from_domain("rust-lang.org") {
+    ///   Ok(certificate) => {
+    ///     // do something with certificate
+    ///     assert!(certificate.server.is_valid);
+    ///   }
+    ///   Err(e) => {
+    ///     // ssl invalid
+    ///     eprintln!(e);
+    ///   }
+    /// }
+    /// ```
     pub fn from_domain(domain: &str) -> Result<Cert, std::io::Error> {
         let mut config = rustls::ClientConfig::new();
         config.root_store.add_server_trust_anchors(&webpki_roots::TLS_SERVER_ROOTS);
