@@ -6,7 +6,7 @@ edition = "2018"
 description = "Check ssl certificate"
 repository = "https://github.com/aldidana/checkssl/"
 license = "MIT"
-keywords = ["ssl", "checkssl", "check site ssl"]
+keywords = ["ssl", "checkssl", "check-site-ssl"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
