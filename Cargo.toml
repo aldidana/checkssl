@@ -1,6 +1,6 @@
 [package]
 name = "checkssl"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Aldi Perdana <aldidana@gmail.com>"]
 edition = "2018"
 description = "Check ssl certificate"
@@ -16,4 +16,5 @@ rustls = "0.18.0"
 webpki-roots = "0.20.0"
 webpki = "0.21.3"
 x509-parser = "0.8.0-beta4"
-chrono = "0.4.13"
+chrono = { version = "0.4.13", features = [ 'serde' ] }
+serde = { version = "1.0.114", features = [ 'derive' ] }

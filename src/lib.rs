@@ -7,8 +7,9 @@ use x509_parser::{parse_x509_der};
 use x509_parser::objects::*;
 use x509_parser::extensions::*;
 use chrono::{Utc, TimeZone, DateTime};
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
 pub struct ServerCert {
     pub common_name: String,
     pub signature_algorithm: String,
@@ -24,7 +25,7 @@ pub struct ServerCert {
     pub time_to_expiration: String,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
 pub struct IntermediateCert {
     pub common_name: String,
     pub signature_algorithm: String,
@@ -39,7 +40,7 @@ pub struct IntermediateCert {
     pub time_to_expiration: String,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Serialize, Deserialize)]
 pub struct Cert {
     pub server: ServerCert,
     pub intermediate: IntermediateCert
